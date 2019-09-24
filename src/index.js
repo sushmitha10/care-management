@@ -1,12 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import b2cauth from "react-azure-adb2c";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+b2cauth.initialize({
+  instance: process.env.REACT_APP_INSTANCE,
+  tenant: process.env.REACT_APP_TENANT,
+  signInPolicy: process.env.REACT_APP_SIGN_IN_POLICY,
+  applicationId: process.env.REACT_APP_APPLICATION_ID,
+  cacheLocation: "sessionStorage",
+  scopes: [process.env.REACT_APP_SCOPE],
+  redirectUri: process.env.REACT_APP_REDIRECT_URI,
+  postLogoutRedirectUri: window.location.origin
+});
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+b2cauth.run(() => {
+  ReactDOM.render(<App />, document.getElementById("root"));
+  serviceWorker.unregister();
+});
