@@ -3,20 +3,24 @@ import logo from "./logo.svg";
 import Auth from "./Auth";
 import "./App.css";
 
-function App() {
+const App = () => {
   const displayUserInformation = () => {
     const auth = new Auth();
     if (auth.isLoggedIn()) {
-      console.log(auth.currentUser());
+      const {
+        firstName,
+        lastName,
+        city,
+        country,
+        favoriteColor
+      } = auth.currentUser();
       return (
         <div>
           <p>
-            Welcome, {auth.currentUser().firstName}{" "}
-            {auth.currentUser().lastName} from {auth.currentUser().city},{" "}
-            {auth.currentUser().country}
+            Welcome, {firstName} {lastName} from {city}, {country}
           </p>
-          <p>Your favorite color is {auth.currentUser().favoriteColor}</p>
-          <a className="App-link" href="/abc" onClick={() => auth.logout()}>
+          <p>Your favorite color is {favoriteColor}</p>
+          <a className="App-link" href="/" onClick={() => auth.logout()}>
             Sign Out
           </a>
         </div>
@@ -32,6 +36,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;

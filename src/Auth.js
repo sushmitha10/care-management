@@ -10,7 +10,6 @@ class Auth {
 
   currentUser = () => {
     const decoded = decodeJWT(b2cauth.getAccessToken());
-    console.log(decoded);
     return {
       name: decoded.name,
       firstName: decoded.given_name,
