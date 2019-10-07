@@ -1,10 +1,9 @@
 import React from "react";
-import logo from "./logo.svg";
 import Auth from "./Auth";
 import "./App.css";
 
 const App = () => {
-  const displayUserInformation = () => {
+ const displayUserInformation = () => {
     const auth = new Auth();
     if (auth.isLoggedIn()) {
       const {
@@ -12,14 +11,22 @@ const App = () => {
         lastName,
         city,
         country,
-        favoriteColor
+        payload
       } = auth.currentUser();
+
       return (
         <div>
+            <h1>
+                APP 1
+            </h1>
           <p>
             Welcome, {firstName} {lastName} from {city}, {country}
           </p>
-          <p>Your favorite color is {favoriteColor}</p>
+            {/*<a className="App-link" href="/" >*/}
+            {/*   Edit profile*/}
+            {/*</a>*/}
+            <p>{JSON.stringify(payload)}</p>
+          {/*<p>Your favorite color is {favoriteColor}</p>*/}
           <a className="App-link" href="/" onClick={() => auth.logout()}>
             Sign Out
           </a>
@@ -31,8 +38,9 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {displayUserInformation()}
+        {
+            displayUserInformation()
+        }
       </header>
     </div>
   );

@@ -8,8 +8,10 @@ class Auth {
 
   getToken = () => b2cauth.getAccessToken();
 
+
   currentUser = () => {
     const decoded = decodeJWT(b2cauth.getAccessToken());
+   // console.log(decoded);
     return {
       name: decoded.name,
       firstName: decoded.given_name,
@@ -17,7 +19,7 @@ class Auth {
       emails: decoded.emails,
       city: decoded.city,
       country: decoded.country,
-      favoriteColor: decoded.extension_FavoriteColor
+      payload: decoded
     };
   };
 }
