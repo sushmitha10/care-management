@@ -1,6 +1,15 @@
 import React from "react";
 import Auth from "./Auth";
 import "./App.css";
+import Header from './components/Header';
+import Menu from './components/Menu';
+import Content from './components/Content';
+import SearchBar from './components/SearchBar';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+
 
 const App = () => {
  const displayUserInformation = () => {
@@ -16,21 +25,13 @@ const App = () => {
 
       return (
         <div>
-            <h1>
-                APP 1
-            </h1>
-          <p>
-            Welcome, {firstName} {lastName} from {city}, {country}
-          </p>
-            {/*<a className="App-link" href="/" >*/}
-            {/*   Edit profile*/}
-            {/*</a>*/}
-            <p>{JSON.stringify(payload)}</p>
-          {/*<p>Your favorite color is {favoriteColor}</p>*/}
-          <a className="App-link" href="/" onClick={() => auth.logout()}>
-            Sign Out
-          </a>
+          <Header/>
+          <Menu/>
+          <Content/>
+          <SearchBar/>
+        
         </div>
+        
       );
     }
   };
