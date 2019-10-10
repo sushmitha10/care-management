@@ -47,7 +47,7 @@ export default class DropzoneDialogExample extends Component {
         // const classes = useStyles();
         return (
             <div>
-                <Button variant="contained" onClick={this.handleOpen.bind(this)}>
+                <Button color="inherit" onClick={this.handleOpen.bind(this)}>
                   Add Multiple Physicians
                 </Button>
                 <DropzoneDialog
