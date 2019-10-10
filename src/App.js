@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Menu from './components/Menu';
 import Content from './components/Content';
 import SearchBar from './components/SearchBar';
+
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -29,7 +30,6 @@ const App = () => {
           <Menu/>
           <Content/>
           <SearchBar/>
-        
         </div>
         
       );

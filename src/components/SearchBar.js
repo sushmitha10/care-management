@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
+import DropzoneDialog from './fileUpload';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -49,6 +50,9 @@ export default function SearchBar() {
             Physician Search
           </Typography>
           </Grid>
+          {<DropzoneDialog>
+
+            </DropzoneDialog>}
           <Grid item xs={6}>
           <Button color="inherit" className={classes.addButton}>Add Physician</Button>
           </Grid>
