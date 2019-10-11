@@ -31,44 +31,42 @@ const useStyles = makeStyles(theme => ({
     const classes = useStyles();
     const auth = new Auth();
 
-        return (
-    <Card className={classes.logo}>
-        
+    return (
+      <Card className={classes.logo}>
+          
         <Grid item xs={12} sm={6}>
-         <img src = "https://myacmprovider.com/_images/ascension_cm_logo.png"  width="500"></img>
+          <img src = "https://myacmprovider.com/_images/ascension_cm_logo.png"  width="500"></img>
         </Grid>
           
         <Grid item xs={12} sm={6}>
-        <Typography className={classes.font} variant="h2" component="p">
-          Designate your
-        </Typography>
-        <Typography className={classes.fonth1} variant="h1" component="p">
-        Primary Care Provider
-        </Typography>
-        <Typography>
-        
-      <Link href={"#"} className={classes.link}>
-        Help
-      </Link>
-      |
-      <Link href={"#"} variant="body2" className={classes.link}>
-        Change Password 
-      </Link>
-      |
-      <Link href={"#"} variant="body2" className={classes.link}>
-        Change Email 
-      </Link>
-      |
-      <Link href={"#"} variant="body2" className={classes.link}>
-        Reports 
-      </Link>
-      |
-      <Link href={"#"} variant="body2" className={classes.link} onClick={() => auth.logout()}>
-        Logout
-      </Link>
-    </Typography>
+          <Typography className={classes.font} variant="h2" component="p">
+            Designate your
+          </Typography>
+          <Typography className={classes.fonth1} variant="h1" component="p">
+            Primary Care Provider
+          </Typography>
+          <Typography>
+            <Link href={"#"} className={classes.link}>
+              Help
+            </Link>
+            |
+            <Link href={"#"} variant="body2" className={classes.link}>
+              Change Password 
+            </Link>
+            |
+            <Link href={"#"} variant="body2" className={classes.link}>
+              Change Email 
+            </Link>
+            |
+            <Link href={"#"} variant="body2" className={classes.link}>
+              Reports 
+            </Link>
+            |
+            <Link href={"#"} variant="body2" className={classes.link} onClick={() => auth.logout()}>
+              Logout
+            </Link>
+          </Typography>
         </Grid>
-    
-         </Card>
-        );
+      </Card>
+    );
 }
