@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
-import DropzoneDialog from './FileUpload';
+import DropzoneDialog from './fileUpload';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles(theme => ({
