@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {DropzoneDialog} from 'material-ui-dropzone'
 import Button from '@material-ui/core/Button';
+import '../Styles.css';
  
 export default class DropzoneDialogExample extends Component {
     constructor(props) {
@@ -43,10 +44,10 @@ export default class DropzoneDialogExample extends Component {
             open: true,
         });
     }
+
     render() {
-        // const classes = useStyles();
         return (
-            <div>
+            <div className="App-button">
                 <Button color="inherit" onClick={this.handleOpen.bind(this)}>
                   Add Multiple Physicians
                 </Button>

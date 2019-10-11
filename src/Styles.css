@@ -1,11 +1,6 @@
 .App {
   text-align: center;
 }
-
-/*.App-logo {*/
-/*  height: 40vmin;*/
-/*}*/
-
 .App-header {
   background-color: white;
   min-height: 100vh;
@@ -17,6 +12,10 @@
   color: black;
 }
 
-/*.App-link {*/
-/*  color: #09d3ac;*/
-/*}*/
+.App-button {
+ background-color: #1e69d2;
+ box-sizing: border-box;
+ border-radius: 4px;
+ color: white !important;
+}
+
