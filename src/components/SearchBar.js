@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -8,10 +8,8 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
-import DropzoneDialog from './fileUpload';
+import DropzoneDialog from './FileUpload';
 import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -21,18 +19,19 @@ const useStyles = makeStyles(theme => ({
         marginRight: "140px", 
       },
     appBar: {
-        backgroundColor: "#3c6fdd",
+        backgroundColor: "#FFFFFF",
     },
     title: {
         display: "flex",
+        color: "#000000",
     },
     addButton: {
-        marginLeft: "26rem",
-    },
-    textField: {
-        // margin: "3em"
+        color: "#FFFFFF",
+        backgroundColor: "#1e69d2",
+        // marginLeft: "10rem",
     },
     toolbar: {
+        
         margin: "1em"
     }
     
@@ -45,15 +44,17 @@ export default function SearchBar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-        <Grid item xs={6}>
+        <Grid item xs={4}>
           <Typography variant="h6" className={classes.title}>
             Physician Search
           </Typography>
           </Grid>
+          <Grid item xs={3}>
           {<DropzoneDialog>
 
             </DropzoneDialog>}
-          <Grid item xs={6}>
+            </Grid>
+          <Grid item xs={2}>
           <Button color="inherit" className={classes.addButton}>Add Physician</Button>
           </Grid>
         </Toolbar>
@@ -84,7 +85,7 @@ export default function SearchBar() {
       Active Only
       </Grid>
       <Grid item xs={2}>
-      <Button color="inherit" >Search</Button>
+      <Button className={classes.addButton} color="inherit" >Search</Button>
       </Grid>
       </Toolbar>
      </Card>
