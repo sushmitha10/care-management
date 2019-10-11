@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function Content()  {
+export default function PhysicianAdminContent()  {
 const classes = useStyles();
     return (
     <Card className={classes.content}>

@@ -3,7 +3,7 @@ import Auth from "./Auth";
 import "./Styles.css";
 import Header from './components/Header';
 import MenuAppBar from './components/MenuAppBar';
-import Content, { WorkListContent } from './components/Content';
+import PhysicianAdminContent, { WorkListContent } from './components/Content';
 import SearchBar from './components/SearchBar';
 
 const App = () => {
@@ -15,7 +15,8 @@ const App = () => {
           <Header/>
           <MenuAppBar/>
           <WorkListContent/>
-          
+          {/* <PhysicianAdminContent/> */}
+          {/* <SearchBar/> */}
         </div>
         
       );
@@ -26,7 +27,7 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         {
-            displayUserInformation()
+          displayUserInformation()
         }
       </header>
     </div>

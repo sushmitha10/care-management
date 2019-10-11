@@ -49,10 +49,8 @@ export default function SearchBar() {
           </Typography>
           </Grid>
           <Grid item xs={3}>
-          {<DropzoneDialog>
-
-            </DropzoneDialog>}
-            </Grid>
+            <DropzoneDialog/>
+          </Grid>
           <Grid item xs={3}>
           <Button color="inherit" className={classes.addButton}>Add Physician</Button>
           </Grid>
