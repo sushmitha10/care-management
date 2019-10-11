@@ -28,7 +28,6 @@ const useStyles = makeStyles(theme => ({
     addButton: {
         color: "#FFFFFF",
         backgroundColor: "#1e69d2",
-        // marginLeft: "10rem",
     },
     toolbar: {
         
@@ -44,7 +43,7 @@ export default function SearchBar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
-        <Grid item xs={4}>
+        <Grid item xs={6}>
           <Typography variant="h6" className={classes.title}>
             Physician Search
           </Typography>
@@ -54,7 +53,7 @@ export default function SearchBar() {
 
             </DropzoneDialog>}
             </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={3}>
           <Button color="inherit" className={classes.addButton}>Add Physician</Button>
           </Grid>
         </Toolbar>

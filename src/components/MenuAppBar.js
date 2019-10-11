@@ -38,7 +38,7 @@ export default function MenuAppBar() {
         <Button color="inherit" className={classes.menuButton}>WORK LIST</Button>
         <Button color="inherit" className={classes.menuButton}>USER ADMIN</Button>
         <Button color="inherit" className={classes.menuButton}>PRACTICE ADMIN</Button>
-        <Button color="inherit" className={classes.menuButton}>PHYSICIAN ADMIN</Button>
+        <Button color="inherit" className={classes.menuButton} >PHYSICIAN ADMIN</Button>
         </Toolbar>
       </AppBar>
     </div>

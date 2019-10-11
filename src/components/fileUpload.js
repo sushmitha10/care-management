@@ -48,7 +48,7 @@ export default class DropzoneDialogExample extends Component {
     render() {
         return (
             <div className="App-button">
-                <Button color="#ffffff" onClick={this.handleOpen.bind(this)}>
+                <Button color="inherit" onClick={this.handleOpen.bind(this)}>
                   Add Multiple Physicians
                 </Button>
                 <DropzoneDialog

@@ -50,3 +50,20 @@ const classes = useStyles();
     </Card>
     );
 }
+
+export function WorkListContent() {
+    const classes = useStyles();
+    return (
+        <Card className={classes.content}>
+            <Grid item xs={2}>
+                <SettingsIcon className={classes.icon}/>
+            </Grid>
+            <Grid item xs={3}>
+                <Typography className={classes.font}>The Work List Screen </Typography>
+            </Grid>
+            <Grid item xs={5}>
+                <Typography className={classes.fonttypo}>allows you to view and take action on the following items: pending description changes for practices</Typography>
+          </Grid>
+        </Card>
+        );
+}
