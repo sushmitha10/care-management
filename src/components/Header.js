@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
       <Card className={classes.logo}>
           
         <Grid item xs={12} sm={6}>
-          <img src = "https://myacmprovider.com/_images/ascension_cm_logo.png"  width="500"></img>
+          <img src = "https://myacmprovider.com/_images/ascension_cm_logo.png"  width="500" alt="Ascension Care Management Logo"></img>
         </Grid>
           
         <Grid item xs={12} sm={6}>

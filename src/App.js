@@ -3,8 +3,6 @@ import Auth from "./Auth";
 import "./Styles.css";
 import Header from './components/Header';
 import MenuAppBar from './components/MenuAppBar';
-import PhysicianAdminContent, { WorkListContent } from './components/Content';
-import SearchBar from './components/SearchBar';
 
 const App = () => {
  const displayUserInformation = () => {
@@ -14,11 +12,7 @@ const App = () => {
         <div>
           <Header/>
           <MenuAppBar/>
-          <WorkListContent/>
-          {/* <PhysicianAdminContent/> */}
-          {/* <SearchBar/> */}
         </div>
-        
       );
     }
   };
