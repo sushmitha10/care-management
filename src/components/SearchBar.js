@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
-import DropzoneDialog from './fileUpload';
+import DropzoneDialog from './FileUpload';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles(theme => ({
@@ -34,10 +34,25 @@ const useStyles = makeStyles(theme => ({
     }
     
   }));
+  
+  
+export default function SearchBar(props) {
+  const [values, setValues] = React.useState({
+    lastName: '',
+    deanumber: '',
+    birthyear: '',
+    activeonly: false,
+  });
 
-export default function SearchBar() {
+  const handleChange = name => event => {
+    event.preventDefault()
+    setValues({ ...values, [name]: event.target.value });
+  };
+  const handleClick=function() {
+    props.value(values)
+    
+  };
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
@@ -64,6 +79,8 @@ export default function SearchBar() {
         id="standard-name"
         className={classes.textField}
         margin="normal"
+        value={values.lastName}
+        onChange={handleChange('lastName')}
       />
       </Grid>
       <Grid item xs={4}>
@@ -72,24 +89,28 @@ export default function SearchBar() {
         id="standard-name"
         className={classes.textField}
         margin="normal"
+        value={values.deanumber}
+        onChange={handleChange('deanumber')}
       />
       </Grid>
       <Grid item xs={3}>
       Practice
       <Select
       label="Practice"
-      value="All"
+      value={values.birthyear}
+      onChange={handleChange('birthyear')}
     />
     </Grid>
     <Grid item xs={3}>
     <Checkbox
-        value="checkedA"
+        value={values.activeonly}
+        onChange={handleChange('activeonly')}
        
       />
       Active Only
       </Grid>
       <Grid item xs={2}>
-      <Button className={classes.addButton} color="inherit" >Search</Button>
+      <Button onClick={handleClick} className={classes.addButton} color="inherit" >Search</Button>
       </Grid>
       </Toolbar>
      </Card>

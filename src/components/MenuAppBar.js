@@ -12,7 +12,7 @@ import {
 import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './Content';
 import SearchBar, { PracticeAdminSearchBar } from './SearchBar';
 import Table from './Table';
-
+import MaterialTable from './MaterialTable';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1, 
@@ -36,9 +36,30 @@ const useStyles = makeStyles(theme => ({
         color: "#000000", 
       }
   }));
+  
 
 export default function MenuAppBar() {
   const classes = useStyles();
+  const [values, setValues] = React.useState({
+    lastName: '',
+    deanumber: '',
+    birthyear: '',
+    activeonly: false,
+    search: false
+  });
+
+  const handleChange = name => event => {
+    setValues({ ...values, [name]: event.target.value });
+  };
+
+  const assign = function(data) {
+    setValues({ ...values, search: false })
+    values.lastName=data.lastName;
+    values.deanumber=data.deanumber;
+    values.birthyear=data.birthyear;
+    values.activeonly=data.activeonly;
+    setValues({ ...values, search: true })
+  }
 
   return (
     <Router>
@@ -75,8 +96,11 @@ export default function MenuAppBar() {
           </Route>
           <Route path="/physicianadmin">
             <PhysicianAdminContent/>
-            <SearchBar/>
-            <Table/>
+            <SearchBar value={assign}/>
+            {
+             values.search? 
+            <MaterialTable value={values}/>:<div></div>
+            }
           </Route>
           <Route path="/">
             <WorkListContent/>
