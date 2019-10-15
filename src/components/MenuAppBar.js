@@ -10,9 +10,10 @@ import {
   Link
 } from "react-router-dom";
 import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './Content';
-import SearchBar, { PracticeAdminSearchBar } from './SearchBar';
-import Table from './Table';
-import MaterialTable, { PracticeAdminTable } from './MaterialTable';
+import PhysicianSearchBar from './PhysicianSearchBar';
+import PracticeAdminSearchBar from './PracticeAdminSearchBar';
+import MaterialTable from './PhysicianTable';
+import PracticeAdminTable from './PracticeAdminTable';
 import MultiplePhysicians from './MultiplePhysicians';
 const useStyles = makeStyles(theme => ({
     root: {
@@ -35,6 +36,10 @@ const useStyles = makeStyles(theme => ({
       },
       toolBar: {
         color: "#000000", 
+      },
+      table: {
+        marginLeft: "140px",
+        marginRight: "140px",
       }
   }));
   
@@ -69,6 +74,7 @@ export default function MenuAppBar() {
     setValues2({ ...values2, search: false })
     values2.practicename=data2.practicename;
     values2.active=data2.active;
+    values2.npinumber=data2.npinumber;
     setValues2({ ...values2, search: true })
   }
 
@@ -104,19 +110,23 @@ export default function MenuAppBar() {
           <Route path="/practiceadmin">
             <PracticeAdminContent/>
             <PracticeAdminSearchBar value={assign2}/>
+            <div className={classes.table}>
             {
-             values.search? 
-            <PracticeAdminTable value={values}/>:<div></div>
+             values2.search? 
+            <PracticeAdminTable value={values2}/>:<div></div>
             }
+            </div>
 
           </Route>
           <Route path="/physicianadmin">
             <PhysicianAdminContent/>
-            <SearchBar value={assign}/>
+            <PhysicianSearchBar value={assign}/>
+            <div className={classes.table}>
             {
              values.search? 
             <MaterialTable value={values}/>:<div></div>
             }
+            </div>
           </Route>
           <Route path="/multiplephysicians">
             <MultiplePhysicians/>

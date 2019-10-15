@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   }));
   
   
-export default function SearchBar(props) {
+export default function PhysicianSearchBar(props) {
   const [values, setValues] = React.useState({
     lastName: '',
     deanumber: '',
@@ -116,56 +116,5 @@ export default function SearchBar(props) {
      </Card>
      </div>
      
-  );
-}
-export function PracticeAdminSearchBar() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
-        <Grid item xs={6}>
-          <Typography variant="h6" className={classes.title}>
-            Practice Admin Search
-          </Typography>
-          </Grid>
-          <Grid item xs={6}>
-          <Button color="inherit" className={classes.addButton}>Add Physician</Button>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-   
-    <Card className={classes.logo}>
-    <Toolbar className={classes.toolbar}> 
-    <Grid item xs={4}>
-        Practice Name
-    <TextField
-        id="standard-name"
-        className={classes.textField}
-        margin="normal"
-      />
-      </Grid>
-      <Grid item xs={4}>
-        Practice Admin
-    <TextField
-        id="standard-name"
-        className={classes.textField}
-        margin="normal"
-      />
-      </Grid>
-    <Grid item xs={3}>
-    <Checkbox
-        value="checkedA"
-       
-      />
-      Search Active Only
-      </Grid>
-      <Grid item xs={2}>
-      <Button className={classes.addButton} color="inherit" >Search</Button>
-      </Grid>
-      </Toolbar>
-     </Card>
-     </div>
   );
 }
