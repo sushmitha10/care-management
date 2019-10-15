@@ -9,8 +9,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import PhysicianAdminContent, { WorkListContent } from './Content';
-import SearchBar from './SearchBar';
+import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './Content';
+import SearchBar, { PracticeAdminSearchBar } from './SearchBar';
+import Table from './Table';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -69,11 +70,13 @@ export default function MenuAppBar() {
             
           </Route>
           <Route path="/practiceadmin">
-            
+            <PracticeAdminContent/>
+            <PracticeAdminSearchBar/>
           </Route>
           <Route path="/physicianadmin">
             <PhysicianAdminContent/>
             <SearchBar/>
+            <Table/>
           </Route>
           <Route path="/">
             <WorkListContent/>

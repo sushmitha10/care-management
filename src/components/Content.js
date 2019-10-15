@@ -67,3 +67,20 @@ export function WorkListContent() {
         </Card>
         );
 }
+
+export function PracticeAdminContent() {
+    const classes = useStyles();
+    return (
+        <Card className={classes.content}>
+            <Grid item xs={2}>
+                <SettingsIcon className={classes.icon}/>
+            </Grid>
+            <Grid item xs={3}>
+                <Typography className={classes.font}>The Practice Admin Screen </Typography>
+            </Grid>
+            <Grid item xs={5}>
+                <Typography className={classes.fonttypo}>allows you to search for, edit and add Practices. </Typography>
+          </Grid>
+        </Card>
+        );
+}
