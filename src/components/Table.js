@@ -22,6 +22,7 @@ function createData(select, physicianLastName, active, practice, availableSpots)
 
 const rows = [
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
+  createData('','Sush', 'Y', 'attap W. Anderson, MD', '299/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
@@ -29,8 +30,7 @@ const rows = [
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
-  createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
-  createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
+  createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '67/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
   createData('','Abbott', 'Y', 'Robert W. Anderson, MD', '299/299'),
