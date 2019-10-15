@@ -22,16 +22,17 @@ export default function PracticeAdminTable(props) {
       { title: 'Active', field: 'active' },
       { title: 'NPI Number', field: 'npinumber'},
     ],
-    data: rawdata.filter(d=>d.practicename===props.value.practicename)
+    data: rawdata
   });
 
   return (
     <MaterialTable
-      title="Practice Admin Search"
+      title="Practice Admin Table"
       columns={state.columns}
       data={state.data}
       options={{
-        search: false
+        search: false,
+        filtering: true
       }}
       
     />

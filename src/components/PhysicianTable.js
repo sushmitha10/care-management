@@ -3,18 +3,18 @@ import MaterialTable from 'material-table';
 
 export default function PhysicianTable(props) {
   const rawdata = [
-    { name: 'Mehmet', active: 'Y', practice: 'Robert', spots: '65'},
-    { name: 'russell', active: 'N', practice: 'Robert', spots: '65' },
-    { name: 'Zach', active: 'Y', practice: 'Robert', spots: '65' },
-    { name: 'smith', active: 'Y', practice: 'Robert', spots: '65'},
-    { name: 'sush', active: 'N', practice: 'Robert', spots: '65' },
-    { name: 'nikhil', active: 'Y', practice: 'Robert', spots: '65' },
-    { name: 'lorenzo', active: 'Y', practice: 'Robert', spots: '65'},
-    { name: 'robert', active: 'N', practice: 'Robert', spots: '65' },
-    { name: 'michelle', active: 'Y', practice: 'Robert', spots: '65' },
-    { name: 'dereck', active: 'Y', practice: 'Robert', spots: '65'},
-    { name: 'Swathi', active: 'N' , practice: 'Robert', spots: '65'},
-    { name: 'ajay', active: 'Y' , practice: 'Robert', spots: '65'},
+    { name: 'Abdelmalik, Maged M.D.', active: 'Y', practice: 'St. Vincents Ambulatory Care, Inc.', spots: '65'},
+    { name: 'Abou Jaoude, Dory M.D.', active: 'N', practice: 'Via Christi Clinic Murdock', spots: '65' },
+    { name: 'Abraham, Sarada M.D.', active: 'Y', practice: 'Columbia St. Marys Hospital - Milwaukee', spots: '65' },
+    { name: 'Abraham, Sheryn M.D.', active: 'Y', practice: 'Childrens Medical Group', spots: '65'},
+    { name: 'Anderson, Jeffrey M.D.', active: 'N', practice: 'Alabama Providence Healthcare Services, Inc.', spots: '65' },
+    { name: 'Zerbe, Cathleen N.P.', active: 'Y', practice: 'American Health Network of Indiana, LLC', spots: '65' },
+    { name: 'Zimmermann, Stephen M.D.', active: 'Y', practice: 'RoMurfreesboro Medical Clinic, P.A.	bert', spots: '65'},
+    { name: 'Zielinski, David M.D.', active: 'N', practice: '	Ascension Our Lady of Victory Hospital', spots: '65' },
+    { name: 'michelle', active: 'Y', practice: 'Good Health Associates, PLLC', spots: '65' },
+    { name: 'dereck', active: 'Y', practice: 'Wheaton Franciscan Medical Group', spots: '65'},
+    { name: 'Swathi', active: 'N' , practice: 'Wheaton Franciscan Medical Group', spots: '65'},
+    { name: 'ajay', active: 'Y' , practice: 'Wheaton Franciscan Medical Group', spots: '65'},
   ];
   const [state, setState] = React.useState({
     columns: [
@@ -26,7 +26,7 @@ export default function PhysicianTable(props) {
         field: 'spots'
       }
     ],
-    data: rawdata.filter(d=>d.name===props.value.lastName)
+    data: rawdata
   });
  
 
@@ -36,7 +36,8 @@ export default function PhysicianTable(props) {
       columns={state.columns}
       data={state.data}
       options={{
-        search: false
+        search: true,
+        filtering: true
       }}
       
     />
