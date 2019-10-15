@@ -10,10 +10,9 @@ import {
   Link
 } from "react-router-dom";
 import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './Content';
-import SearchBar from './SearchBar';
+import PhysicianSearchBar from './PhysicianSearchBar';
 import PracticeAdminSearchBar from './PracticeAdminSearchBar';
-import Table from './Table';
-import MaterialTable from './MaterialTable';
+import MaterialTable from './PhysicianTable';
 import PracticeAdminTable from './PracticeAdminTable';
 const useStyles = makeStyles(theme => ({
     root: {
@@ -36,6 +35,10 @@ const useStyles = makeStyles(theme => ({
       },
       toolBar: {
         color: "#000000", 
+      },
+      table: {
+        marginLeft: "140px",
+        marginRight: "140px",
       }
   }));
   
@@ -106,19 +109,23 @@ export default function MenuAppBar() {
           <Route path="/practiceadmin">
             <PracticeAdminContent/>
             <PracticeAdminSearchBar value={assign2}/>
+            <div className={classes.table}>
             {
              values2.search? 
             <PracticeAdminTable value={values2}/>:<div></div>
             }
+            </div>
 
           </Route>
           <Route path="/physicianadmin">
             <PhysicianAdminContent/>
-            <SearchBar value={assign}/>
+            <PhysicianSearchBar value={assign}/>
+            <div className={classes.table}>
             {
              values.search? 
             <MaterialTable value={values}/>:<div></div>
             }
+            </div>
           </Route>
           <Route path="/">
             <WorkListContent/>

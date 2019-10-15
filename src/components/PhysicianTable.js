@@ -28,6 +28,7 @@ export default function PhysicianTable(props) {
     ],
     data: rawdata.filter(d=>d.name===props.value.lastName)
   });
+ 
 
   return (
     <MaterialTable

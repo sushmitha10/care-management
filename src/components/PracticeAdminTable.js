@@ -37,39 +37,3 @@ export default function PracticeAdminTable(props) {
     />
   );
 }
-
-// export function PracticeAdminTable(props) {
-//   const rawdata2 = [
-//     { practicename: 'Mehmet', active: 'Y' },
-//     { practicename: 'russell', active: 'N' },
-//     { practicename: 'Zach', active: 'Y' },
-//     { practicename: 'smith', active: 'Y'},
-//     { practicename: 'sush', active: 'N' },
-//     { practicename: 'nikhil', active: 'Y' },
-//     { practicename: 'lorenzo', active: 'Y'},
-//     { practicename: 'robert', active: 'N' },
-//     { practicename: 'michelle', active: 'Y' },
-//     { practicename: 'dereck', active: 'Y'},
-//     { practicename: 'Swathi', active: 'N' },
-//     { practicename: 'ajay', active: 'Y' },
-//   ];
-//   const [state, setState] = React.useState({
-//     columns2: [
-//       { title: 'Practice Admin Name', field: 'practicename' },
-//       { title: 'Search Active Only', field: 'active' },
-//     ],
-//     data2: rawdata2.filter(d=>d.practicename===props.value.practicename)
-//   });
-
-//   return (
-//     <PracticeAdminTable
-//       title="Practice Admin Search"
-//       columns2={state.columns2}
-//       data2={state.data2}
-//       options={{
-//         search: false
-//       }}
-      
-//     />
-//   );
-// }
