@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
-import DropzoneDialog from './FileUpload';
+import DropzoneDialog from './fileUpload';
 import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles(theme => ({
@@ -40,7 +40,7 @@ export default function SearchBar(props) {
   const [values, setValues] = React.useState({
     lastName: '',
     deanumber: '',
-    birthyear: '',
+    practice: '',
     activeonly: false,
   });
 
@@ -97,8 +97,8 @@ export default function SearchBar(props) {
       Practice
       <Select
       label="Practice"
-      value={values.birthyear}
-      onChange={handleChange('birthyear')}
+      value={values.practice}
+      onChange={handleChange('practice')}
     />
     </Grid>
     <Grid item xs={3}>
@@ -127,13 +127,10 @@ export function PracticeAdminSearchBar() {
         <Toolbar>
         <Grid item xs={6}>
           <Typography variant="h6" className={classes.title}>
-            Physician Search
+            Practice Admin Search
           </Typography>
           </Grid>
-          <Grid item xs={3}>
-            <DropzoneDialog/>
-          </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={6}>
           <Button color="inherit" className={classes.addButton}>Add Physician</Button>
           </Grid>
         </Toolbar>
@@ -157,13 +154,6 @@ export function PracticeAdminSearchBar() {
         margin="normal"
       />
       </Grid>
-      <Grid item xs={3}>
-      Practice
-      <Select
-      label="Practice"
-      value="All"
-    />
-    </Grid>
     <Grid item xs={3}>
     <Checkbox
         value="checkedA"

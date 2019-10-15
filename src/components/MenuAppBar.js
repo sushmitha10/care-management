@@ -12,7 +12,7 @@ import {
 import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './Content';
 import SearchBar, { PracticeAdminSearchBar } from './SearchBar';
 import Table from './Table';
-import MaterialTable from './MaterialTable';
+import MaterialTable, { PracticeAdminTable } from './MaterialTable';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1, 
@@ -43,9 +43,13 @@ export default function MenuAppBar() {
   const [values, setValues] = React.useState({
     lastName: '',
     deanumber: '',
-    birthyear: '',
+    practice: '',
     activeonly: false,
     search: false
+  });
+  const [values2, setValues2] = React.useState({
+    practicename: '',
+    active: false
   });
 
   const handleChange = name => event => {
@@ -56,9 +60,15 @@ export default function MenuAppBar() {
     setValues({ ...values, search: false })
     values.lastName=data.lastName;
     values.deanumber=data.deanumber;
-    values.birthyear=data.birthyear;
+    values.practice=data.practice;
     values.activeonly=data.activeonly;
     setValues({ ...values, search: true })
+  }
+  const assign2 = function(data2) {
+    setValues2({ ...values2, search: false })
+    values2.practicename=data2.practicename;
+    values2.active=data2.active;
+    setValues2({ ...values2, search: true })
   }
 
   return (
@@ -92,7 +102,12 @@ export default function MenuAppBar() {
           </Route>
           <Route path="/practiceadmin">
             <PracticeAdminContent/>
-            <PracticeAdminSearchBar/>
+            <PracticeAdminSearchBar value={assign2}/>
+            {
+             values.search? 
+            <PracticeAdminTable value={values}/>:<div></div>
+            }
+
           </Route>
           <Route path="/physicianadmin">
             <PhysicianAdminContent/>
