@@ -13,6 +13,7 @@ import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './
 import SearchBar, { PracticeAdminSearchBar } from './SearchBar';
 import Table from './Table';
 import MaterialTable, { PracticeAdminTable } from './MaterialTable';
+import MultiplePhysicians from './MultiplePhysicians';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1, 
@@ -116,6 +117,9 @@ export default function MenuAppBar() {
              values.search? 
             <MaterialTable value={values}/>:<div></div>
             }
+          </Route>
+          <Route path="/multiplephysicians">
+            <MultiplePhysicians/>
           </Route>
           <Route path="/">
             <WorkListContent/>
