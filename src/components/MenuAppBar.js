@@ -10,9 +10,11 @@ import {
   Link
 } from "react-router-dom";
 import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './Content';
-import SearchBar, { PracticeAdminSearchBar } from './SearchBar';
+import SearchBar from './SearchBar';
+import PracticeAdminSearchBar from './PracticeAdminSearchBar';
 import Table from './Table';
-import MaterialTable, { PracticeAdminTable } from './MaterialTable';
+import MaterialTable from './MaterialTable';
+import PracticeAdminTable from './PracticeAdminTable';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1, 
@@ -68,6 +70,7 @@ export default function MenuAppBar() {
     setValues2({ ...values2, search: false })
     values2.practicename=data2.practicename;
     values2.active=data2.active;
+    values2.npinumber=data2.npinumber;
     setValues2({ ...values2, search: true })
   }
 
@@ -104,8 +107,8 @@ export default function MenuAppBar() {
             <PracticeAdminContent/>
             <PracticeAdminSearchBar value={assign2}/>
             {
-             values.search? 
-            <PracticeAdminTable value={values}/>:<div></div>
+             values2.search? 
+            <PracticeAdminTable value={values2}/>:<div></div>
             }
 
           </Route>

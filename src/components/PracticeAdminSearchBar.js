@@ -36,12 +36,11 @@ const useStyles = makeStyles(theme => ({
   }));
   
   
-export default function SearchBar(props) {
+export default function PracticeAdminSearchBar(props) {
   const [values, setValues] = React.useState({
-    lastName: '',
-    deanumber: '',
-    practice: '',
-    activeonly: false,
+    practicename: '',
+    npinumber: '',
+    active: false,
   });
 
   const handleChange = name => event => {
@@ -59,11 +58,8 @@ export default function SearchBar(props) {
         <Toolbar>
         <Grid item xs={6}>
           <Typography variant="h6" className={classes.title}>
-            Physician Search
+            Practice Admin Search
           </Typography>
-          </Grid>
-          <Grid item xs={3}>
-            <DropzoneDialog/>
           </Grid>
           <Grid item xs={3}>
           <Button color="inherit" className={classes.addButton}>Add Physician</Button>
@@ -74,40 +70,32 @@ export default function SearchBar(props) {
     <Card className={classes.logo}>
     <Toolbar className={classes.toolbar}> 
     <Grid item xs={4}>
-        Last Name
+        Practice Name
     <TextField
         id="standard-name"
         className={classes.textField}
         margin="normal"
-        value={values.lastName}
-        onChange={handleChange('lastName')}
+        value={values.practicename}
+        onChange={handleChange('practicename')}
       />
       </Grid>
       <Grid item xs={4}>
-        DEA Number
+        NPI Number
     <TextField
         id="standard-name"
         className={classes.textField}
         margin="normal"
-        value={values.deanumber}
-        onChange={handleChange('deanumber')}
+        value={values.npinumber}
+        onChange={handleChange('npinumber')}
       />
       </Grid>
-      <Grid item xs={3}>
-      Practice
-      <Select
-      label="Practice"
-      value={values.practice}
-      onChange={handleChange('practice')}
-    />
-    </Grid>
     <Grid item xs={3}>
     <Checkbox
-        value={values.activeonly}
-        onChange={handleChange('activeonly')}
+        value={values.active}
+        onChange={handleChange('active')}
        
       />
-      Active Only
+      Active 
       </Grid>
       <Grid item xs={2}>
       <Button onClick={handleClick} className={classes.addButton} color="inherit" >Search</Button>
