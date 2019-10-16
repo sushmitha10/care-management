@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     icon: {
         fontSize: "7rem",
         color: "#1b4297",
-        paddingLeft: "20px",
+        paddingLeft: "40px",
     }
 }));
 
@@ -38,7 +38,7 @@ export default function PhysicianAdminContent()  {
 const classes = useStyles();
     return (
     <Card className={classes.content}>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
             <SettingsIcon className={classes.icon}/>
         </Grid>
         <Grid item xs={3}>
@@ -55,13 +55,13 @@ export function WorkListContent() {
     const classes = useStyles();
     return (
         <Card className={classes.content}>
-            <Grid item xs={2}>
+            <Grid item xs={1}>
                 <SettingsIcon className={classes.icon}/>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={2}>
                 <Typography className={classes.font}>The Work List Screen </Typography>
             </Grid>
-            <Grid item xs={5}>
+            <Grid item xs={4}>
                 <Typography className={classes.fonttypo}>allows you to view and take action on the following items: pending description changes for practices</Typography>
           </Grid>
         </Card>
@@ -72,14 +72,31 @@ export function PracticeAdminContent() {
     const classes = useStyles();
     return (
         <Card className={classes.content}>
-            <Grid item xs={2}>
+            <Grid item xs={1}>
                 <SettingsIcon className={classes.icon}/>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={2}>
                 <Typography className={classes.font}>The Practice Admin Screen </Typography>
             </Grid>
-            <Grid item xs={5}>
+            <Grid item xs={4}>
                 <Typography className={classes.fonttypo}>allows you to search for, edit and add Practices. </Typography>
+          </Grid>
+        </Card>
+        );
+}
+
+export function UserAdminContent() {
+    const classes = useStyles();
+    return (
+        <Card className={classes.content}>
+            <Grid item xs={1}>
+                <SettingsIcon className={classes.icon}/>
+            </Grid>
+            <Grid item xs={2}>
+                <Typography className={classes.font}>The User Admin Screen </Typography>
+            </Grid>
+            <Grid item xs={4}>
+                <Typography className={classes.fonttypo}>allows you to search for, edit, add and deactivate Users.  </Typography>
           </Grid>
         </Card>
         );

@@ -9,12 +9,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import PhysicianAdminContent, { WorkListContent, PracticeAdminContent } from './Content';
+import PhysicianAdminContent, { WorkListContent, PracticeAdminContent, UserAdminContent } from './Content';
 import PhysicianSearchBar from './PhysicianSearchBar';
 import PracticeAdminSearchBar from './PracticeAdminSearchBar';
 import MaterialTable from './PhysicianTable';
 import PracticeAdminTable from './PracticeAdminTable';
 import MultiplePhysicians from './MultiplePhysicians';
+import UserAdminForm from './UserAdminForm';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1, 
@@ -48,13 +49,14 @@ export default function MenuAppBar() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     lastName: '',
-    deanumber: '',
+    npinumber: '',
     practice: '',
     activeonly: false,
     search: false
   });
   const [values2, setValues2] = React.useState({
     practicename: '',
+    taxid: '',
     active: false
   });
 
@@ -65,7 +67,7 @@ export default function MenuAppBar() {
   const assign = function(data) {
     setValues({ ...values, search: false })
     values.lastName=data.lastName;
-    values.deanumber=data.deanumber;
+    values.npinumber=data.npinumber;
     values.practice=data.practice;
     values.activeonly=data.activeonly;
     setValues({ ...values, search: true })
@@ -74,7 +76,7 @@ export default function MenuAppBar() {
     setValues2({ ...values2, search: false })
     values2.practicename=data2.practicename;
     values2.active=data2.active;
-    values2.npinumber=data2.npinumber;
+    values2.taxid=data2.taxid;
     setValues2({ ...values2, search: true })
   }
 
@@ -105,7 +107,8 @@ export default function MenuAppBar() {
             <WorkListContent/>
           </Route>
           <Route path="/useradmin">
-            
+          <UserAdminContent/>
+          <UserAdminForm/>
           </Route>
           <Route path="/practiceadmin">
             <PracticeAdminContent/>
