@@ -8,10 +8,17 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
-import DropzoneDialog from './fileUpload';
 import Checkbox from '@material-ui/core/Checkbox';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 
 const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 250,
+  },
     root: {
         flexGrow: 1, 
         display: "block",
@@ -40,7 +47,8 @@ export default function PracticeAdminSearchBar(props) {
   const [values, setValues] = React.useState({
     practicename: '',
     npinumber: '',
-    active: false,
+    practiceadmin: '',
+    activeonly: false,
   });
 
   const handleChange = name => event => {
@@ -62,7 +70,7 @@ export default function PracticeAdminSearchBar(props) {
           </Typography>
           </Grid>
           <Grid item xs={3}>
-          <Button color="inherit" className={classes.addButton}>Add Physician</Button>
+          <Button color="inherit" className={classes.addButton}>Add Practice</Button>
           </Grid>
         </Toolbar>
       </AppBar>
@@ -70,33 +78,57 @@ export default function PracticeAdminSearchBar(props) {
     <Card className={classes.logo}>
     <Toolbar className={classes.toolbar}> 
     <Grid item xs={4}>
-        Practice Name
-    <TextField
+      <TextField
         id="standard-name"
+        label="Practice Name"
         className={classes.textField}
-        margin="normal"
         value={values.practicename}
         onChange={handleChange('practicename')}
+        margin="normal"
       />
       </Grid>
       <Grid item xs={4}>
-        NPI Number
-    <TextField
+      <TextField
         id="standard-name"
+        label="NPI Number"
         className={classes.textField}
-        margin="normal"
         value={values.npinumber}
         onChange={handleChange('npinumber')}
+        margin="normal"
       />
       </Grid>
-    <Grid item xs={3}>
-    <Checkbox
-        value={values.active}
-        onChange={handleChange('active')}
-       
+    
+      <Grid item xs={4}>
+      <FormControl className={classes.formControl}>
+      <InputLabel htmlFor="practiceadmin">Practice Admin</InputLabel>
+        <Select
+          value={values.practiceadmin}
+          onChange={handleChange('practiceadmin')}
+          inputProps={{
+            name: 'Practice Admin',
+            id: 'practiceadmin',
+          }}
+        >
+          <MenuItem value={'Burris Lesia'}>Burris Lesia</MenuItem>
+          <MenuItem value={'Bryant Jewel'}>Bryant Jewel</MenuItem>
+          <MenuItem value={'Brewer Brittany'}>Burris Lesia</MenuItem>
+          <MenuItem value={'Gamble Misty'}>Bryant Jewel</MenuItem>
+        </Select>
+        </FormControl>
+        </Grid>
+        <Grid item xs={4}>
+        <FormControlLabel
+        control={
+          <Checkbox
+            onChange={handleChange('activeonly')}
+            value={values.activeonly}
+            color="primary"
+          />
+        }
+        label="Active Only"
       />
-      Active 
       </Grid>
+   
       <Grid item xs={2}>
       <Button onClick={handleClick} className={classes.addButton} color="inherit" >Search</Button>
       </Grid>
