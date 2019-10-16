@@ -5,6 +5,7 @@ import ChevronRight from '@material-ui/icons/ChevronRight';
 import { forwardRef } from 'react';
 import FirstPage from '@material-ui/icons/FirstPage';
 import LastPage from '@material-ui/icons/LastPage';
+import ArrowUpward from '@material-ui/icons/ArrowUpward';
 
 export default function PhysicianTable(props) {
   const rawdata = [
@@ -47,6 +48,7 @@ export default function PhysicianTable(props) {
       LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
       NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
       PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
+      SortArrow: forwardRef((props, ref) => <ArrowUpward {...props} ref={ref} />),
     };
 
   return (
