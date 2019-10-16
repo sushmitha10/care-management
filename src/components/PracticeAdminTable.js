@@ -22,7 +22,7 @@ export default function PracticeAdminTable(props) {
       { title: 'Active', field: 'active' },
       { title: 'NPI Number', field: 'npinumber'},
     ],
-    data: rawdata
+    data: rawdata.filter(d=>d.practicename===props.value.practicename)
   });
 
   return (
@@ -32,7 +32,7 @@ export default function PracticeAdminTable(props) {
       data={state.data}
       options={{
         search: false,
-        filtering: true
+        // filtering: true
       }}
       
     />

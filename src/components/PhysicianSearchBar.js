@@ -10,8 +10,16 @@ import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 import DropzoneDialog from './fileUpload';
 import Checkbox from '@material-ui/core/Checkbox';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
 
 const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 250,
+  },
     root: {
         flexGrow: 1, 
         display: "block",
@@ -74,41 +82,56 @@ export default function PhysicianSearchBar(props) {
     <Card className={classes.logo}>
     <Toolbar className={classes.toolbar}> 
     <Grid item xs={4}>
-        Last Name
-    <TextField
+      <TextField
         id="standard-name"
+        label="Last Name"
         className={classes.textField}
-        margin="normal"
         value={values.lastName}
         onChange={handleChange('lastName')}
+        margin="normal"
       />
       </Grid>
       <Grid item xs={4}>
-        DEA Number
-    <TextField
+      <TextField
         id="standard-name"
+        label="DEA Number"
         className={classes.textField}
-        margin="normal"
         value={values.deanumber}
         onChange={handleChange('deanumber')}
+        margin="normal"
       />
       </Grid>
-      <Grid item xs={3}>
-      Practice
-      <Select
-      label="Practice"
-      value={values.practice}
-      onChange={handleChange('practice')}
-    />
-    </Grid>
-    <Grid item xs={3}>
-    <Checkbox
-        value={values.activeonly}
-        onChange={handleChange('activeonly')}
-       
+    
+      <Grid item xs={4}>
+      <FormControl className={classes.formControl}>
+      <InputLabel htmlFor="practice">Practice</InputLabel>
+        <Select
+          value={values.practice}
+          onChange={handleChange('practice')}
+          inputProps={{
+            name: 'Practice',
+            id: 'practice',
+          }}
+        >
+          <MenuItem value={'Wheaton Franciscan Medical Group'}>Wheaton Franciscan Medical Group</MenuItem>
+          <MenuItem value={'St. Vincents Ambulatory Care, Inc.'}>St. Vincents Ambulatory Care, Inc.</MenuItem>
+          {/* <MenuItem value={30}>Thirty</MenuItem> */}
+        </Select>
+        </FormControl>
+        </Grid>
+        <Grid item xs={4}>
+        <FormControlLabel
+        control={
+          <Checkbox
+            onChange={handleChange('activeonly')}
+            value={values.activeonly}
+            color="primary"
+          />
+        }
+        label="Active Only"
       />
-      Active Only
       </Grid>
+   
       <Grid item xs={2}>
       <Button onClick={handleClick} className={classes.addButton} color="inherit" >Search</Button>
       </Grid>
