@@ -1,5 +1,10 @@
 import React from 'react';
 import MaterialTable from 'material-table';
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+import { forwardRef } from 'react';
+import FirstPage from '@material-ui/icons/FirstPage';
+import LastPage from '@material-ui/icons/LastPage';
 
 export default function PracticeAdminTable(props) {
   const rawdata = [
@@ -32,10 +37,14 @@ export default function PracticeAdminTable(props) {
     console.log(JSON.stringify(props));
       return dataCopy
     })();
-
- 
-
+    const tableIcons = {
+      FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
+      LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
+      NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+      PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
+    };
   return (
+    <div>
     <MaterialTable
       title="Physician Search"
       columns={columns}
@@ -44,7 +53,16 @@ export default function PracticeAdminTable(props) {
         search: false,
         // filtering: true
       }}
-      
+      icons={tableIcons}
+      localization={{
+        pagination: {
+          nextAriaLabel: 'h',
+          previousAriaLabel: '',
+          firstAriaLabel: '',
+          lastAriaLabel: '',
+        }
+      }}
     />
+    </div>
   );
 }
