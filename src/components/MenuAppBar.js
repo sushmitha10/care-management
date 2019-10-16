@@ -129,7 +129,10 @@ export default function MenuAppBar() {
             </div>
           </Route>
           <Route path="/multiplephysicians">
-            <MultiplePhysicians/>
+            <PhysicianAdminContent/>
+            <div className={classes.table}>
+              <MultiplePhysicians/>
+            </div>
           </Route>
           <Route path="/">
             <WorkListContent/>
