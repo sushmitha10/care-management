@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
 export default function PracticeAdminSearchBar(props) {
   const [values, setValues] = React.useState({
     practicename: '',
-    npinumber: '',
+    taxid: '',
     practiceadmin: '',
     activeonly: false,
   });
@@ -90,11 +90,12 @@ export default function PracticeAdminSearchBar(props) {
       <Grid item xs={4}>
       <TextField
         id="standard-name"
-        label="NPI Number"
+        label="Tax Id"
         className={classes.textField}
-        value={values.npinumber}
-        onChange={handleChange('npinumber')}
+        value={values.taxid}
+        onChange={handleChange('taxid')}
         margin="normal"
+        placeholder="123-45-6789"
       />
       </Grid>
     
