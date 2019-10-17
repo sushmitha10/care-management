@@ -25,9 +25,9 @@ export default function PhysicianTable(props) {
 
    const columns= [
       { title: 'Physician Name', field: 'name' },
-      { title: 'Active', field: 'active' },
-      { title: 'Practice', field: 'practice'},
       { title: 'NPI Number', field: 'npinumber'},
+      { title: 'Practice', field: 'practice'},
+      { title: 'Active', field: 'active' },
       {
         title: 'Available Spots',
         field: 'spots'
