@@ -1,8 +1,23 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import MaterialTable from 'material-table'
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+import { forwardRef } from 'react';
+import FirstPage from '@material-ui/icons/FirstPage';
+import LastPage from '@material-ui/icons/LastPage';
+import ArrowUpward from '@material-ui/icons/ArrowUpward';
+import SearchIcon from '@material-ui/icons/Search';
 
 class MultiplePhysicians extends React.Component {
+    static tableIcons = {
+        FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),
+        LastPage: forwardRef((props, ref) => <LastPage {...props} ref={ref} />),
+        NextPage: forwardRef((props, ref) => <ChevronRight {...props} ref={ref} />),
+        PreviousPage: forwardRef((props, ref) => <ChevronLeft {...props} ref={ref} />),
+        SortArrow: forwardRef((props, ref) => <ArrowUpward {...props} ref={ref} />),
+        Search: forwardRef((props, ref) => <SearchIcon {...props} ref={ref} />)
+      };
+
     render() {
       return (
         <MaterialTable
@@ -24,6 +39,7 @@ class MultiplePhysicians extends React.Component {
 
           ]}
           title="Multiple Physicians Import View"
+          icons={MultiplePhysicians.tableIcons}
           detailPanel={rowData => {
             return (
               <iframe
