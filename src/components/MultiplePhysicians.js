@@ -98,7 +98,7 @@ class MultiplePhysicians extends React.Component {
                 new Promise((resolve, reject) => {
                   setTimeout(() => {
                     {
-                      const data = this.state.data;
+                      const data = Object.values(this.props.location.state.fileUploadData);
                       data.push(newData);
                       this.setState({ data }, () => resolve());
                     }
@@ -109,7 +109,7 @@ class MultiplePhysicians extends React.Component {
                 new Promise((resolve, reject) => {
                   setTimeout(() => {
                     {
-                      const data = this.state.data;
+                      const data = Object.values(this.props.location.state.fileUploadData);
                       const index = data.indexOf(oldData);
                       data[index] = newData;
                       this.setState({ data }, () => resolve());
@@ -121,7 +121,7 @@ class MultiplePhysicians extends React.Component {
                 new Promise((resolve, reject) => {
                   setTimeout(() => {
                     {
-                      let data = this.state.data;
+                      let data = Object.values(this.props.location.state.fileUploadData);
                       const index = data.indexOf(oldData);
                       data.splice(index, 1);
                       this.setState({ data }, () => resolve());
