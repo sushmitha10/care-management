@@ -101,3 +101,20 @@ export function UserAdminContent() {
         </Card>
         );
 }
+
+export function PhysicianProfileContent() {
+    const classes = useStyles();
+    return (
+        <Card className={classes.content}>
+            <Grid item xs={1}>
+                <SettingsIcon className={classes.icon}/>
+            </Grid>
+            <Grid item xs={3}>
+                <Typography className={classes.font}>The Physician Profile Screen </Typography>
+            </Grid>
+           
+                <Typography className={classes.fonttypo}>allows you to edit, add, or deactivate physicians, including managing their locations. </Typography>
+  
+        </Card>
+        );
+}

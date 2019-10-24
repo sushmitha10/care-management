@@ -1,4 +1,3 @@
-import React from 'react';
 import MaterialTable from 'material-table';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
@@ -6,22 +5,36 @@ import { forwardRef } from 'react';
 import FirstPage from '@material-ui/icons/FirstPage';
 import LastPage from '@material-ui/icons/LastPage';
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { async } from 'q';
 
 export default function PhysicianTable(props) {
-  const rawdata = [
-    { name: 'Abdelmalik, Maged M.D.', active: 'Y', practice: 'St. Vincents Ambulatory Care, Inc.', spots: '65', npinumber: '123945'},
-    { name: 'Abou Jaoude, Dory M.D.', active: 'N', practice: 'Via Christi Clinic Murdock', spots: '65', npinumber: '1233875'},
-    { name: 'Abraham, Sarada M.D.', active: 'Y', practice: 'Columbia St. Marys Hospital - Milwaukee', spots: '65', npinumber: '1233467'},
-    { name: 'Abraham, Sheryn M.D.', active: 'Y', practice: 'Childrens Medical Group', spots: '65', npinumber: '1255455'},
-    { name: 'Anderson, Jeffrey M.D.', active: 'N', practice: 'Alabama Providence Healthcare Services, Inc.', spots: '65', npinumber: '1233455'},
-    { name: 'Zerbe, Cathleen N.P.', active: 'Y', practice: 'American Health Network of Indiana, LLC', spots: '65', npinumber: '1233455' },
-    { name: 'Zimmermann, Stephen M.D.', active: 'Y', practice: 'RoMurfreesboro Medical Clinic, P.A.	bert', spots: '65', npinumber: '1233455'},
-    { name: 'Zielinski, David M.D.', active: 'N', practice: '	Ascension Our Lady of Victory Hospital', spots: '65', npinumber: '1233455' },
-    { name: 'russell', active: 'Y', practice: 'Good Health Associates, PLLC', spots: '65', npinumber: '1233455' },
-    { name: 'dereck', active: 'Y', practice: 'Wheaton Franciscan Medical Group', spots: '65', npinumber: '123655'},
-    { name: 'Swathi', active: 'N' , practice: 'Wheaton Franciscan Medical Group', spots: '65', npinumber: '167455'},
-    { name: 'ajay', active: 'Y' , practice: 'Wheaton Franciscan Medical Group', spots: '65', npinumber: '125455'},
-  ];
+
+  const [data, setData] = useState();
+
+  const parseData = function(data) {
+    return { 
+      name: data.Name, 
+      active: data.IsActive__c?'Y':'N', 
+      practice: data.Name, 
+      spots: data.Account_Count__c, 
+      npinumber: data.PR_Practice_NPI_Number__c
+    }
+  }
+  
+  const AuthStr = 'Bearer 00D1D0000009kZ7!AQQAQHbChJ7jEKl8OM._tf842VHzc9vZGB3yS5I7osuAXfTWyPa5o7kreOTGFd5uM_ToOY56p4153S3k9fxvHuckXwyAlu1i';
+  (async () => {
+ let res = await  axios.get('https://ascensionsf--mrktplace.my.salesforce.com/services/data/v46.0/sobjects/Account/001U000000g8P42IAE', { 'headers': { 'Authorization': AuthStr } })
+          let dataCopy = JSON.parse(JSON.stringify([parseData(res.data)]))
+    dataCopy = props.value.lastName? dataCopy.filter(d=>d.name.includes(props.value.lastName)): dataCopy
+    dataCopy = props.value.npinumber? dataCopy.filter(d=>d.npinumber.includes(props.value.npinumber)): dataCopy
+    dataCopy = props.value.practice? dataCopy.filter(d=>d.practice.includes(props.value.practice)): dataCopy
+    dataCopy = props.value.activeonly? dataCopy.filter(d=>d.active==='Y'): dataCopy
+       if((dataCopy || []).length !== (data||[]).length )
+    setData(dataCopy)
+  })()
+
 
    const columns= [
       { title: 'Physician Name', field: 'name' },
@@ -33,15 +46,6 @@ export default function PhysicianTable(props) {
         field: 'spots'
       }
     ]
-   const data= (()=>{
-      let dataCopy = JSON.parse(JSON.stringify(rawdata))
-    dataCopy = props.value.lastName? dataCopy.filter(d=>d.name.includes(props.value.lastName)): dataCopy
-    dataCopy = props.value.npinumber? dataCopy.filter(d=>d.npinumber.includes(props.value.npinumber)): dataCopy
-    dataCopy = props.value.practice? dataCopy.filter(d=>d.practice.includes(props.value.practice)): dataCopy
-    dataCopy = props.value.activeonly? dataCopy.filter(d=>d.active==='Y'): dataCopy
-    console.log(JSON.stringify(props));
-      return dataCopy
-    })();
 
     const tableIcons = {
       FirstPage: forwardRef((props, ref) => <FirstPage {...props} ref={ref} />),

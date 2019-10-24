@@ -9,13 +9,14 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import PhysicianAdminContent, { WorkListContent, PracticeAdminContent, UserAdminContent } from './Content';
+import PhysicianAdminContent, { WorkListContent, PracticeAdminContent, UserAdminContent, PhysicianProfileContent } from './Content';
 import PhysicianSearchBar from './PhysicianSearchBar';
 import PracticeAdminSearchBar from './PracticeAdminSearchBar';
 import MaterialTable from './PhysicianTable';
 import PracticeAdminTable from './PracticeAdminTable';
 import MultiplePhysicians from './MultiplePhysicians';
 import UserAdminForm from './UserAdminForm';
+import PhysicianProfile from './PhysicianProfile'
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1, 
@@ -126,10 +127,21 @@ export default function MenuAppBar() {
             <PhysicianSearchBar value={assign}/>
             <div className={classes.table}>
             {
-             values.search? 
-            <MaterialTable value={values}/>:<div></div>
+             values.search&&
+            <MaterialTable value={values}/>
             }
             </div>
+          </Route>
+          <Route path="/physicianprofile">
+            <PhysicianProfileContent/>
+            <PhysicianProfile/>
+            {/* <PhysicianSearchBar value={assign}/>
+            <div className={classes.table}>
+            {
+             values.search&&
+            <MaterialTable value={values}/>
+            }
+            </div> */}
           </Route>
           <Route path="/multiplephysicians">
             <PhysicianAdminContent/>

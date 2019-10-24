@@ -14,6 +14,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -74,8 +80,11 @@ export default function PhysicianSearchBar(props) {
             <DropzoneDialog/>
           </Grid>
           <Grid item xs={3}>
-          <Button color="inherit" className={classes.addButton}>Add Physician</Button>
+          <Link to="/physicianprofile">
+              <Button color="inherit" className={classes.addButton} >ADD PHYSICIAN</Button>
+            </Link>
           </Grid>
+        
         </Toolbar>
       </AppBar>
    
