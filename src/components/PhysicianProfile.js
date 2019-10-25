@@ -12,6 +12,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import MaterialTable from 'material-table'
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -81,7 +82,7 @@ export default function PhysicianProfile() {
         </Toolbar>
       
       </AppBar>
-      <Box className={classes.box}>
+  
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
         <Grid>
@@ -256,8 +257,56 @@ export default function PhysicianProfile() {
           </Typography></Grid>
                
                 </Grid>
-      </Box>
-            
+                <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+        <Grid item xs={6}>
+          <Typography variant="h6" className={classes.title}>
+          Physician Locations
+          </Typography>
+          
+          </Grid>
+        
+        </Toolbar>
+      
+      </AppBar> 
+                <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+        <Grid item xs={6}>
+          <Typography variant="h6" className={classes.title}>
+          Member Roster - Breakdown of Current Members
+          </Typography>
+          
+          </Grid>
+        
+        </Toolbar>
+      
+      </AppBar>  
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+        <Grid item xs={6}>
+          <Typography variant="h6" className={classes.title}>
+          Member Roster - Current Members
+
+          </Typography>
+          
+          </Grid>
+        
+        </Toolbar>
+      
+      </AppBar>  
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+        <Grid item xs={6}>
+          <Typography variant="h6" className={classes.title}>
+          Member Roster - Future/Pending Members
+
+          </Typography>
+          
+          </Grid>
+        
+        </Toolbar>
+      
+      </AppBar>  
         </form>
     );
 }  
