@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import {DropzoneDialog} from 'material-ui-dropzone'
 import Button from '@material-ui/core/Button';
 import '../Styles.css';
+// import { styles } from '../Stylesheet.css'
 import MultiplePhysicians from './MultiplePhysicians';
 import {
     BrowserRouter as Router,
     Redirect
   } from "react-router-dom";
- 
+//   const classes = styles();
 export default class ProviderDropzoneDialog extends Component {
 	constructor(props) {
 		super(props);
@@ -72,8 +73,9 @@ export default class ProviderDropzoneDialog extends Component {
 
 	render() {
 		return (
+			
 			<div className="App-button">
-				<Button color="inherit" onClick={this.handleOpen.bind(this)}>
+				<Button color="inherit" className="classes.searchAddButton" onClick={this.handleOpen.bind(this)}>
 					Add Multiple Physicians
 				</Button>
 				<DropzoneDialog

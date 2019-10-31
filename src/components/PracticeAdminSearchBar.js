@@ -33,22 +33,22 @@ export default function PracticeAdminSearchBar(props) {
   };
   const classes = styles();
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+    <div className={classes.adminSearchRoot}>
+      <AppBar position="static" className={classes.adminSearchAppBar}>
         <Toolbar>
         <Grid item xs={6}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.adminSearchTitle}>
             Practice Admin Search
           </Typography>
           </Grid>
           <Grid item xs={3}>
-          <Button color="inherit" className={classes.addButton}>Add Practice</Button>
+          <Button color="inherit" className={classes.adminSearchAddButton}>Add Practice</Button>
           </Grid>
         </Toolbar>
       </AppBar>
    
     <Card className={classes.logo}>
-    <Toolbar className={classes.toolbar}> 
+    <Toolbar className={classes.adminSearchToolbar}> 
     <Grid item xs={4}>
       <TextField
         id="standard-name"
@@ -72,7 +72,7 @@ export default function PracticeAdminSearchBar(props) {
       </Grid>
     
       <Grid item xs={4}>
-      <FormControl className={classes.formControl}>
+      <FormControl className={classes.adminSearchFormControl}>
       <InputLabel htmlFor="practiceadmin">Practice Admin</InputLabel>
         <Select
           value={values.practiceadmin}
@@ -103,7 +103,7 @@ export default function PracticeAdminSearchBar(props) {
       </Grid>
    
       <Grid item xs={2}>
-      <Button onClick={handleClick} className={classes.addButton} color="inherit" >Search</Button>
+      <Button onClick={handleClick} className={classes.menuAppButton} color="inherit" >Search</Button>
       </Grid>
       </Toolbar>
      </Card>

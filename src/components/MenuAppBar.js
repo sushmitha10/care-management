@@ -109,13 +109,6 @@ export default function MenuAppBar() {
           <Route path="/physicianprofile">
             <PhysicianProfileContent/>
             <PhysicianProfile/>
-            {/* <PhysicianSearchBar value={assign}/>
-            <div className={classes.menuAppTable}>
-            {
-             values.search&&
-            <MaterialTable value={values}/>
-            }
-            </div> */}
           </Route>
           <Route path="/multiplephysicians">
             <PhysicianAdminContent/>

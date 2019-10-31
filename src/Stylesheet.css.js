@@ -1,4 +1,3 @@
-// import { StyleSheet } from 'react-native'
 import { makeStyles } from '@material-ui/core/styles';
   
 
@@ -22,12 +21,11 @@ const styles = makeStyles(theme => ({
         margin: "20px",
         marginLeft: "140px",
         marginRight: "140px",
-        
     },
     contentIcon: {
-        fontSize: "7rem",
         color: "#1b4297",
         paddingLeft: "40px",
+        fontSize: "7rem !important",
     },
     headerFont: {
       flexGrow: 1,
@@ -48,26 +46,26 @@ const styles = makeStyles(theme => ({
         boxShadow: "none",
     },
     menuAppBarRoot: {
-        flexGrow: 1, 
+        flexGrow: "1", 
         display: "block",
-        marginLeft: "140px",
-        marginRight: "140px", 
     },
-    menuAppBarButton: {
-        paddingRight: "120px",
-    },
+    // menuAppBarButton: {
+    //     margin: "5em !important",
+    // },
     menuAppBar: {
-        paddingLeft: "150px",
-        position: "static",
-        backgroundColor: "#FFFFFF",
+        paddingLeft: "100px",
+        paddingRight: "50px",
+        position: "static !important",
+        backgroundColor: "#1E69D2 !important",
+        borderRadius: "4px",
     },
     menuToolBar: {
         color: "#000000", 
     },
-    menuTable: {
-        marginLeft: "140px",
-        marginRight: "140px",
-    },
+    // menuTable: {
+    //     marginLeft: "140px",
+    //     marginRight: "140px",
+    // },
         container: {
           display: 'flex',
           flexWrap: 'wrap',
@@ -118,15 +116,21 @@ const styles = makeStyles(theme => ({
         marginRight: "140px", 
       },
     searchAppBar: {
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#1E69D2 !important",
     },
     searchTitle: {
         display: "flex",
-        color: "#000000",
+        color: "#FFFFFF",
     },
     searchAddButton: {
-        color: "#FFFFFF",
-        backgroundColor: "#1e69d2",
+      paddingLeft: "4em !important",
+      paddingRight: "4em !important",
+      border: "none",
+      backgroundColor: "#00a890 !important",
+      color: "black !important",
+      textAlign: "center !important",
+      display: "inline-block !important",
+      fontSize: "15px",
     },
     searchToolbar: {
         margin: "1em"
@@ -138,13 +142,20 @@ const styles = makeStyles(theme => ({
           marginRight: "140px", 
         },
         menuAppButton: {
-            paddingRight: "120px",
+            paddingLeft: "4em !important",
+            paddingRight: "4em !important",
+            border: "none",
+            color: "white !important",
+            textAlign: "center !important",
+            display: "inline-block !important",
+            fontSize: "15px",
         },
         menuAppTitle: {
           flexGrow: 1,
         },
         appBar: {
-          paddingLeft: "150px",
+          
+          paddingRight: "50px",
           position: "static",
           backgroundColor: "#FFFFFF",
           
@@ -156,7 +167,7 @@ const styles = makeStyles(theme => ({
           marginLeft: "140px",
           marginRight: "140px",
         },
-          formControl: {
+          adminSearchFormControl: {
             margin: theme.spacing(1),
             minWidth: 250,
           },
@@ -216,17 +227,5 @@ const styles = makeStyles(theme => ({
           
  })
 )
- const buttons = makeStyles(theme => ({
-   primary: {
-     flex: 1,
-     height: 70,
-     backgroundColor: 'red',
-     justifyContent: 'center',
-     alignItems: 'center',
-     marginLeft: 20,
-     marginRight: 20
-   }
- })
-)
 
- export { styles, buttons } 
+ export { styles } 
