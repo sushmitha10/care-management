@@ -13,6 +13,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { styles } from '../Stylesheet.css';
 import FormControl from '@material-ui/core/FormControl';
 import {
   BrowserRouter as Router,
@@ -21,35 +22,6 @@ import {
   Link
 } from "react-router-dom";
 
-const useStyles = makeStyles(theme => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 250,
-  },
-    root: {
-        flexGrow: 1, 
-        display: "block",
-        marginLeft: "140px",
-        marginRight: "140px", 
-      },
-    appBar: {
-        backgroundColor: "#FFFFFF",
-    },
-    title: {
-        display: "flex",
-        color: "#000000",
-    },
-    addButton: {
-        color: "#FFFFFF",
-        backgroundColor: "#1e69d2",
-    },
-    toolbar: {
-        margin: "1em"
-    }
-    
-  }));
-  
-  
 export default function PhysicianSearchBar(props) {
   const [values, setValues] = React.useState({
     lastName: '',
@@ -66,13 +38,13 @@ export default function PhysicianSearchBar(props) {
     props.value(values)
     
   };
-  const classes = useStyles();
+  const classes = styles();
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+    <div className={classes.searchRoot}>
+      <AppBar position="static" className={classes.searchAppBar}>
         <Toolbar>
         <Grid item xs={6}>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.searchTitle}>
             Physician Search
           </Typography>
           </Grid>
@@ -81,20 +53,20 @@ export default function PhysicianSearchBar(props) {
           </Grid>
           <Grid item xs={3}>
           <Link to="/physicianprofile">
-              <Button color="inherit" className={classes.addButton} >ADD PHYSICIAN</Button>
+              <Button color="inherit" className={classes.searchAddButton} >ADD PHYSICIAN</Button>
             </Link>
           </Grid>
         
         </Toolbar>
       </AppBar>
    
-    <Card className={classes.logo}>
-    <Toolbar className={classes.toolbar}> 
+    <Card className={classes.searchLogo}>
+    <Toolbar className={classes.searchToolbar}> 
     <Grid item xs={4}>
       <TextField
         id="standard-name"
         label="Last Name"
-        className={classes.textField}
+        className={classes.searchTextField}
         value={values.lastName}
         onChange={handleChange('lastName')}
         margin="normal"
@@ -104,7 +76,7 @@ export default function PhysicianSearchBar(props) {
       <TextField
         id="standard-name"
         label="NPI Number"
-        className={classes.textField}
+        className={classes.searchTextField}
         value={values.npinumber}
         onChange={handleChange('npinumber')}
         margin="normal"
@@ -112,7 +84,7 @@ export default function PhysicianSearchBar(props) {
       </Grid>
     
       <Grid item xs={4}>
-      <FormControl className={classes.formControl}>
+      <FormControl className={classes.searchFormControl}>
       <InputLabel htmlFor="practice">Practice</InputLabel>
         <Select
           value={values.practice}
@@ -142,7 +114,7 @@ export default function PhysicianSearchBar(props) {
       </Grid>
    
       <Grid item xs={2}>
-      <Button onClick={handleClick} className={classes.addButton} color="inherit" >Search</Button>
+      <Button onClick={handleClick} className={classes.searchAddButton} color="inherit" >Search</Button>
       </Grid>
       </Toolbar>
      </Card>

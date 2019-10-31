@@ -4,116 +4,89 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';  
 import { makeStyles } from '@material-ui/core/styles';
 import SettingsIcon from '@material-ui/icons/Settings';
+import { styles } from '../Stylesheet.css'
 
-const useStyles = makeStyles(theme => ({
-    font: {
-      flexGrow: 1,
-      color: "#1b4297",
-      fontSize: "22px",
-      fontFamily: "WhitneyA",
-      paddingTop: "40px",
-      fontWeight: "bold",
-    
-    },
-    fonttypo: {
-        fontSize: "18px",
-        paddingTop: "44px",
-        fontFamily: "WhitneyB"
-      },
-    content: {
-        display: "flex",
-        margin: "20px",
-        marginLeft: "140px",
-        marginRight: "140px",
-        
-    },
-    icon: {
-        fontSize: "7rem",
-        color: "#1b4297",
-        paddingLeft: "40px",
-    }
-}));
 
 export default function PhysicianAdminContent()  {
-const classes = useStyles();
+const classes = styles();
     return (
     <Card className={classes.content}>
         <Grid item xs={1}>
-            <SettingsIcon className={classes.icon}/>
+            <SettingsIcon className={classes.contentIcon}/>
         </Grid>
         <Grid item xs={3}>
-            <Typography className={classes.font}>The Physician Admin Screen</Typography>
+            <Typography className={classes.contentFont}>The Physician Admin Screen</Typography>
         </Grid>
         <Grid item xs={4}>
-            <Typography className={classes.fonttypo}>allows you to search for, edit and add physicians.</Typography>
+            <Typography className={classes.contentTypography}>allows you to search for, edit and add physicians.</Typography>
       </Grid>
     </Card>
     );
 }
 
 export function WorkListContent() {
-    const classes = useStyles();
+    const classes = styles();
     return (
         <Card className={classes.content}>
             <Grid item xs={1}>
-                <SettingsIcon className={classes.icon}/>
+                <SettingsIcon className={classes.contentIcon}/>
             </Grid>
             <Grid item xs={2}>
-                <Typography className={classes.font}>The Work List Screen </Typography>
+                <Typography className={classes.contentFont}>The Work List Screen </Typography>
             </Grid>
             <Grid item xs={4}>
-                <Typography className={classes.fonttypo}>allows you to view and take action on the following items: pending description changes for practices</Typography>
+                <Typography className={classes.contentTypography}>allows you to view and take action on the following items: pending description changes for practices</Typography>
           </Grid>
         </Card>
         );
 }
 
 export function PracticeAdminContent() {
-    const classes = useStyles();
+    const classes = styles();
     return (
         <Card className={classes.content}>
             <Grid item xs={1}>
-                <SettingsIcon className={classes.icon}/>
+                <SettingsIcon className={classes.contentIcon}/>
             </Grid>
             <Grid item xs={2}>
-                <Typography className={classes.font}>The Practice Admin Screen </Typography>
+                <Typography className={classes.contentFont}>The Practice Admin Screen </Typography>
             </Grid>
             <Grid item xs={4}>
-                <Typography className={classes.fonttypo}>allows you to search for, edit and add Practices. </Typography>
+                <Typography className={classes.contentTypography}>allows you to search for, edit and add Practices. </Typography>
           </Grid>
         </Card>
         );
 }
 
 export function UserAdminContent() {
-    const classes = useStyles();
+    const classes = styles();
     return (
         <Card className={classes.content}>
             <Grid item xs={1}>
-                <SettingsIcon className={classes.icon}/>
+                <SettingsIcon className={classes.contentIcon}/>
             </Grid>
             <Grid item xs={2}>
-                <Typography className={classes.font}>The User Admin Screen </Typography>
+                <Typography className={classes.contentFont}>The User Admin Screen </Typography>
             </Grid>
             <Grid item xs={4}>
-                <Typography className={classes.fonttypo}>allows you to search for, edit, add and deactivate Users.  </Typography>
+                <Typography className={classes.contentTypography}>allows you to search for, edit, add and deactivate Users.  </Typography>
           </Grid>
         </Card>
         );
 }
 
 export function PhysicianProfileContent() {
-    const classes = useStyles();
+    const classes = styles();
     return (
         <Card className={classes.content}>
             <Grid item xs={1}>
-                <SettingsIcon className={classes.icon}/>
+                <SettingsIcon className={classes.contentIcon}/>
             </Grid>
             <Grid item xs={3}>
-                <Typography className={classes.font}>The Physician Profile Screen </Typography>
+                <Typography className={classes.contentFont}>The Physician Profile Screen </Typography>
             </Grid>
            
-                <Typography className={classes.fonttypo}>allows you to edit, add, or deactivate physicians, including managing their locations. </Typography>
+                <Typography className={classes.contentTypography}>allows you to edit, add, or deactivate physicians, including managing their locations. </Typography>
   
         </Card>
         );

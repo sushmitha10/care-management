@@ -16,38 +16,12 @@ import MaterialTable from './PhysicianTable';
 import PracticeAdminTable from './PracticeAdminTable';
 import MultiplePhysicians from './MultiplePhysicians';
 import UserAdminForm from './UserAdminForm';
-import PhysicianProfile from './PhysicianProfile'
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1, 
-        display: "block",
-        marginLeft: "140px",
-        marginRight: "140px", 
-      },
-      menuButton: {
-          paddingRight: "120px",
-      },
-      title: {
-        flexGrow: 1,
-      },
-      appBar: {
-        paddingLeft: "150px",
-        position: "static",
-        backgroundColor: "#FFFFFF",
-        
-      },
-      toolBar: {
-        color: "#000000", 
-      },
-      table: {
-        marginLeft: "140px",
-        marginRight: "140px",
-      }
-  }));
+import PhysicianProfile from './PhysicianProfile';
+import { styles } from '../Stylesheet.css';
   
-
 export default function MenuAppBar() {
-  const classes = useStyles();
+  const classes = styles();
+  console.log()
   const [values, setValues] = React.useState({
     lastName: '',
     npinumber: '',
@@ -83,20 +57,20 @@ export default function MenuAppBar() {
 
   return (
     <Router>
-      <div className={classes.root}>
-        <AppBar className={classes.appBar}>
-          <Toolbar className={classes.toolBar}>
+      <div className={classes.menuAppRoot}>
+        <AppBar className={classes.menuAppBar}>
+          <Toolbar className={classes.menuAppToolBar}>
             <Link to="/worklist">
-              <Button color="inherit" className={classes.menuButton}>WORK LIST</Button>
+              <Button color="inherit" className={classes.menuAppButton}>WORK LIST</Button>
             </Link>
             <Link to="/useradmin">
-              <Button color="inherit" className={classes.menuButton}>USER ADMIN</Button>
+              <Button color="inherit" className={classes.menuAppButton}>USER ADMIN</Button>
             </Link>
             <Link to="/practiceadmin">
-              <Button color="inherit" className={classes.menuButton}>PRACTICE ADMIN</Button>
+              <Button color="inherit" className={classes.menuAppButton}>PRACTICE ADMIN</Button>
             </Link>
             <Link to="/physicianadmin">
-              <Button color="inherit" className={classes.menuButton} >PHYSICIAN ADMIN</Button>
+              <Button color="inherit" className={classes.menuAppButton} >PHYSICIAN ADMIN</Button>
             </Link>
           </Toolbar>
         </AppBar>
@@ -114,7 +88,7 @@ export default function MenuAppBar() {
           <Route path="/practiceadmin">
             <PracticeAdminContent/>
             <PracticeAdminSearchBar value={assign2}/>
-            <div className={classes.table}>
+            <div className={classes.menuAppTable}>
             {
              values2.search? 
             <PracticeAdminTable value={values2}/>:<div></div>
@@ -125,7 +99,7 @@ export default function MenuAppBar() {
           <Route path="/physicianadmin">
             <PhysicianAdminContent/>
             <PhysicianSearchBar value={assign}/>
-            <div className={classes.table}>
+            <div className={classes.menuAppTable}>
             {
              values.search&&
             <MaterialTable value={values}/>
@@ -136,7 +110,7 @@ export default function MenuAppBar() {
             <PhysicianProfileContent/>
             <PhysicianProfile/>
             {/* <PhysicianSearchBar value={assign}/>
-            <div className={classes.table}>
+            <div className={classes.menuAppTable}>
             {
              values.search&&
             <MaterialTable value={values}/>
@@ -145,7 +119,7 @@ export default function MenuAppBar() {
           </Route>
           <Route path="/multiplephysicians">
             <PhysicianAdminContent/>
-            <div className={classes.table}>
+            <div className={classes.menuAppTable}>
               <MultiplePhysicians/>
             </div>
           </Route>

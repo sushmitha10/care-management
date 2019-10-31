@@ -12,52 +12,11 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import MaterialTable from 'material-table'
-
-const useStyles = makeStyles(theme => ({
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      marginLeft: '140px',
-      marginTop: '30px',
-      marginRight: "140px", 
-    },
-    textField: {
-      padding: "100px"
-    },
-    dense: {
-      marginTop: 19,
-    },
-    menu: {
-      width: 200,
-    },
-    title: {
-        display: "flex",
-        color: "#000000",
-    },
-    bigAvatar: {
-        margin: "50px 10px 50px",
-        width: 150,
-        height: 150,
-      },
-      appBar: {
-        paddingLeft: "30px",
-        position: "static",
-        backgroundColor: "#FFFFFF",
-      },
-      toolBar: {
-        color: "#000000", 
-      },
-      box: {
-        display: "contents",
-      },
-      typography: {
-        marginTop: "30px"
-      }
-  }));
+import MaterialTable from 'material-table';
+import { styles } from '../Stylesheet.css';
   
 export default function PhysicianProfile() {
-    const classes = useStyles();
+  const classes = styles();
     const [values, setValues] = React.useState({
       name: 'Cat in the Hat',
       age: '',
@@ -99,7 +58,6 @@ export default function PhysicianProfile() {
           shrink: true,
         }}
       />
-        
         </Toolbar>
       
       </AppBar>

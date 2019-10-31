@@ -13,36 +13,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
+import { styles } from '../Stylesheet.css'
 
-const useStyles = makeStyles(theme => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 250,
-  },
-    root: {
-        flexGrow: 1, 
-        display: "block",
-        marginLeft: "140px",
-        marginRight: "140px", 
-      },
-    appBar: {
-        backgroundColor: "#FFFFFF",
-    },
-    title: {
-        display: "flex",
-        color: "#000000",
-    },
-    addButton: {
-        color: "#FFFFFF",
-        backgroundColor: "#1e69d2",
-    },
-    toolbar: {
-        margin: "1em"
-    }
-    
-  }));
-  
-  
 export default function PracticeAdminSearchBar(props) {
   const [values, setValues] = React.useState({
     practicename: '',
@@ -59,7 +31,7 @@ export default function PracticeAdminSearchBar(props) {
     props.value(values)
     
   };
-  const classes = useStyles();
+  const classes = styles();
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>

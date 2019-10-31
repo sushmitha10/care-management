@@ -3,47 +3,25 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';  
 import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
 import Auth from "../Auth";
-import '../Styles.css';
+import { styles } from '../Stylesheet.css'
 
-const useStyles = makeStyles(theme => ({
-    font: {
-      flexGrow: 1,
-      color: "#1b4297",
-      fontSize: "38px",
-      fontFamily: "WhitneyA",
-      paddingTop: "40px",
-    
-    },
-    fonth1: {
-        color: "#1b4297",
-        fontSize: "44px",
-        fontWeight: "bold",
-        fontFamily: "WhitneyA"
-      },
-    logo: {
-    display: "flex",
-    boxShadow: "none",
-    },
-  }));
-
-  export default function Header()  {
-    const classes = useStyles();
+export default function Header()  {
+    const classes = styles();
     const auth = new Auth();
 
     return (
-      <Card className={classes.logo}>
+      <Card className={classes.headerLogo}>
           
         <Grid item xs={12} sm={6}>
           <img src = "https://myacmprovider.com/_images/ascension_cm_logo.png"  width="500" alt="Ascension Care Management Logo"></img>
         </Grid>
           
         <Grid item xs={12} sm={6}>
-          <Typography className={classes.font} variant="h2" component="p">
+          <Typography className={classes.headerFont} variant="h2" component="p">
             Designate your
           </Typography>
-          <Typography className={classes.fonth1} variant="h1" component="p">
+          <Typography className={classes.headerFonth1} variant="h1" component="p">
             Primary Care Provider
           </Typography>
           <Typography>
@@ -63,7 +41,7 @@ const useStyles = makeStyles(theme => ({
               Reports 
             </Link>
             |
-            <Link href={"#"} variant="body2" className={classes.link} onClick={() => auth.logout()}>
+            <Link href={"#"} variant="body2" className={classes.link} onClick={() => auth.headerLogout()}>
               Logout
             </Link>
           </Typography>
