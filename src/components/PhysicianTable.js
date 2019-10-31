@@ -7,7 +7,6 @@ import LastPage from '@material-ui/icons/LastPage';
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { async } from 'q';
 
 export default function PhysicianTable(props) {
 

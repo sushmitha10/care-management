@@ -11,46 +11,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
-const useStyles = makeStyles(theme => ({
-    formControl: {
-        margin: '80px',
-        minWidth: 250,
-      },
-        root: {
-            flexGrow: 1, 
-            display: "block",
-            marginLeft: "140px",
-            marginRight: "140px", 
-          },
-        appBar: {
-            backgroundColor: "#FFFFFF",
-        },
-        title: {
-            display: "flex",
-            color: "#000000",
-        },
-        addButton: {
-            color: "#FFFFFF",
-            backgroundColor: "#1e69d2",
-        },
-        toolbar: {
-            margin: "1em"
-        },
-         container: {
-            display: 'flex',
-            flexWrap: 'wrap',
-            marginLeft: '140px',
-            marginRight: '140px',
-        },
-        textField: {
-            margin: '80px',
-        },
- 
-}));
-
+import { styles } from '../Stylesheet.css';
 export default function UserAdminForm() {
-  const classes = useStyles();
+  const classes = styles();
   const [values, setValues] = React.useState({
   });
 
